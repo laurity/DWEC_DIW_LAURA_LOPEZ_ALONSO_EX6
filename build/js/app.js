@@ -3,16 +3,15 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 const iniciarApp = () =>{
-    mostrarImagen();
+    mostrarAnio()
+    mostrarImagen()
     ScrollBar()
     mostrarModal()
+    darkMode()
 }
 
 const ScrollBar = () => {
-    const barra = document.querySelectorAll("contenedor-header")
-    barra.addEventListener("scroll", () => {
-        
-    })
+    
 
 }
 
@@ -33,16 +32,18 @@ const crearImagenes = () =>{
 const mostrarImagen = () => {
     const id = parseInt(imagen.dataset.imagenId)
     const imagen = document.createElement("img")
+    imagen.src = `build/img/grande/${id}.png`
+    imagen.src = `build/img/grande/${id}.jpg`
     imagen.src = `build/img/grande/${id}.webp`
 
     const overlay = document.createElement("div")
     overlay.appendChild(imagen)
-    overlay.classList.add("overlay")
+    overlay.classList.add("new-overlay")
 
     overlay.onclick = () => {
         overlay.remove()
     }
-    const cerrarImagen = document.createElement("p")
+    const cerrarImagen = document.createElement("img")
     cerrarImagen.textContent = "X"
     cerrarImagen.classList.add("btn-cerrar")
 
@@ -59,6 +60,7 @@ const crearModal = () => {
     const modal = document.createElement("div")
     modal.classList.add(modal)
     modal.innerHTML = `
+
     `
 }
 
@@ -84,6 +86,6 @@ const darkMode = () => {
 
 const mostrarAnio = () => {
     const year = document.getElementById("year")
-    year = getFullYear();
-    year.innerHTML = year
+    year = getFullYear().textContent;
+    
 }
