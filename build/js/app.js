@@ -27,7 +27,12 @@ const mostrarImagenes = () => {
 }
 
 const crearModal = () => {
+    //creamos el modal
+    const modal = document.createElement("div")
+    modal.classList.add(modal)
+    modal.innerHTML = `
 
+    `
 }
 
 const mostrarModal = () =>{
@@ -35,5 +40,12 @@ const mostrarModal = () =>{
 }
 
 const darkMode = () => {
-    
+    const darkMode = document.getElementById("dark-mode")
+
+    darkMode.addEventListener("click", () => {
+        document.body.classList.toggle("dark")
+    })
+
+    body.style.backgroundColor = "black"
+    body.style.color = "white"
 }
