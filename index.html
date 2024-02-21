@@ -11,10 +11,10 @@
 <body>
 
     <header class="contenedor contenedor-header">
-        <span class="logo">
+      <a href="#inicio">  <span class="logo">
             logo
         </span>
-
+    </a>
         <nav class="navbar">
             <a href="#inicio">Inicio</a>
             <a href="#galeria">Galería</a>
@@ -23,23 +23,30 @@
     </header>
 
     <main>
+        <!--Video-->
         <section class="video">
             <div class="overlay">
-                <video>
-                    <source src="">
-                </video>
-
+                <h2>Stardew Valley</h2>
+                <p>Best Game 2016</p>
             </div>
-
+                <video autoplay loop muted>
+                    <source src="/build/video/video.mp4">
+                    <source src="/build/video/video.ogg">
+                    <source src="/build/video/video.webm">
+                </video>
+            
         </section>
-
-        <section>
-
+        <!--Galería-->
+        <section class="galeria">
+            <h3>Galería de corral</h3>
+            <ul class="galeria-imagenes">
+                
+            </ul>
         </section>
     </main>
 
     <footer>
-
+        <p>Stardew Valley <span id="year"></span> </p>
     </footer>
     
 </body>
