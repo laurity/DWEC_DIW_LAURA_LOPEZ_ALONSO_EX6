@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 const iniciarApp = () =>{
     mostrarImagenes();
+    ScrollBar()
+    mostrarModal()
 }
 
 const ScrollBar = () => {
@@ -48,4 +50,10 @@ const darkMode = () => {
 
     body.style.backgroundColor = "black"
     body.style.color = "white"
+}
+
+const mostrarAnio = () => {
+    const year = document.getElementById("year")
+    year = getFullYear();
+    year.innerHTML = year
 }
