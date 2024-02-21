@@ -2,25 +2,16 @@ document.addEventListener('DOMContentLoaded', function(){
     iniciarApp();
 });
 
-function iniciarApp() {
-    
+const iniciarApp = () => {
     navegacionFija();
-
     crearGaleria();
-
     scrollNav();
-
     darkMode();
-
-     let yearSpan = document.getElementById("year");
-
-     let currentYear = new Date().getFullYear();
-
-     yearSpan.textContent = currentYear;
+    anio();
 }
 
 
-function navegacionFija() {
+const navegacionFija = () => {
     const barra = document.querySelector('.header');
     const video = document.querySelector('.video');
     const body = document.querySelector('body');
@@ -38,7 +29,7 @@ function navegacionFija() {
 }
 
 
-function scrollNav() {
+const scrollNav = () => {
     const enlaces = document.querySelectorAll('.navegacion-principal a');
 
     enlaces.forEach(enlace => {
@@ -51,7 +42,7 @@ function scrollNav() {
     });
 }
 
-function crearGaleria() {
+const crearGaleria = () => {
     const galeria = document.querySelector('.galeria-imagenes');
     for(let i = 1; i <= 5; i++ ) {
         const imagen = document.createElement('picture');
@@ -59,7 +50,7 @@ function crearGaleria() {
             <source srcset="build/img/thumb/${i}.png" type="image/png">
             <source srcset="build/img/thumb/${i}.jpg" type="image/jpg">
             <source srcset="build/img/thumb/${i}.webp" type="image/webp">
-            <img loading="lazy" width="200" height="300" src="build/img/thumb/${i}.png" alt="imagen galeria">
+            <img loading="lazy" width="200" height="300" src="build/img/thumb/${i}.png" alt="imagen">
         `;
         imagen.onclick = function() {
             mostrarImagen(i);
@@ -68,7 +59,7 @@ function crearGaleria() {
     }
 }  
 
-function mostrarImagen(id) {
+const mostrarImagen = (id) => {
     const imagen = document.createElement('picture');
     imagen.innerHTML = `
         <source srcset="build/img/grande/${id}.png" type="image/png">
@@ -100,10 +91,16 @@ function mostrarImagen(id) {
     body.classList.add('fijar-body');
 }
 
-function darkMode() {
+const darkMode = () => {
     const botonDarkMode = document.querySelector('#dark-mode-button');
     const body = document.querySelector('body');
     botonDarkMode.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
     });
+}
+
+const anio = () => {
+    let yearSpan = document.getElementById("year");
+    let currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
 }
